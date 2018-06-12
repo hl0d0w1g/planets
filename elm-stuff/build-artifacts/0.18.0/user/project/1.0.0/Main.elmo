@@ -1,0 +1,445 @@
+var _user$project$Main$fieldStyle = _elm_lang$html$Html_Attributes$style(
+	{
+		ctor: '::',
+		_0: {ctor: '_Tuple2', _0: 'width', _1: '30%'},
+		_1: {
+			ctor: '::',
+			_0: {ctor: '_Tuple2', _0: 'height', _1: '40px'},
+			_1: {
+				ctor: '::',
+				_0: {ctor: '_Tuple2', _0: 'margin', _1: '10px'},
+				_1: {
+					ctor: '::',
+					_0: {ctor: '_Tuple2', _0: 'font-size', _1: '30px'},
+					_1: {
+						ctor: '::',
+						_0: {ctor: '_Tuple2', _0: 'text-align', _1: 'center'},
+						_1: {ctor: '[]'}
+					}
+				}
+			}
+		}
+	});
+var _user$project$Main$btnStyle = _elm_lang$html$Html_Attributes$style(
+	{
+		ctor: '::',
+		_0: {ctor: '_Tuple2', _0: 'margin', _1: '5px'},
+		_1: {
+			ctor: '::',
+			_0: {ctor: '_Tuple2', _0: 'padding', _1: '10px'},
+			_1: {
+				ctor: '::',
+				_0: {ctor: '_Tuple2', _0: 'text-align', _1: 'center'},
+				_1: {ctor: '[]'}
+			}
+		}
+	});
+var _user$project$Main$stylesheet = function () {
+	var children = {ctor: '[]'};
+	var attrs = {
+		ctor: '::',
+		_0: A2(_elm_lang$html$Html_Attributes$attribute, 'Rel', 'stylesheet'),
+		_1: {
+			ctor: '::',
+			_0: A2(_elm_lang$html$Html_Attributes$attribute, 'property', 'stylesheet'),
+			_1: {
+				ctor: '::',
+				_0: A2(_elm_lang$html$Html_Attributes$attribute, 'href', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'),
+				_1: {ctor: '[]'}
+			}
+		}
+	};
+	var tag = 'link';
+	return A3(_elm_lang$html$Html$node, tag, attrs, children);
+}();
+var _user$project$Main$btnRad = F2(
+	function (value, msg) {
+		return A2(
+			_elm_lang$html$Html$label,
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html_Attributes$style(
+					{
+						ctor: '::',
+						_0: {ctor: '_Tuple2', _0: 'padding', _1: '20px'},
+						_1: {ctor: '[]'}
+					}),
+				_1: {ctor: '[]'}
+			},
+			{
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$input,
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html_Attributes$type_('radio'),
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$name('font-size'),
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$html$Html_Events$onClick(msg),
+								_1: {ctor: '[]'}
+							}
+						}
+					},
+					{ctor: '[]'}),
+				_1: {
+					ctor: '::',
+					_0: _elm_lang$html$Html$text(value),
+					_1: {ctor: '[]'}
+				}
+			});
+	});
+var _user$project$Main$calcName = function (user) {
+	var _p0 = user.planet;
+	switch (_p0) {
+		case 'Mercurio':
+			return A2(_elm_lang$core$String$dropRight, 2, user.name);
+		case 'Venus':
+			return _elm_lang$core$String$reverse(user.name);
+		case 'Marte':
+			return A2(_elm_lang$core$String$right, 2, user.name);
+		case 'Jupiter':
+			return _elm_lang$core$String$toUpper(user.name);
+		case 'Saturno':
+			return A2(_elm_lang$core$String$left, 2, user.name);
+		case 'Urano':
+			return A2(_elm_lang$core$String$append, user.name, 'ito');
+		case 'Neptuno':
+			return A2(_elm_lang$core$String$dropLeft, 2, user.name);
+		default:
+			return user.name;
+	}
+};
+var _user$project$Main$calcWeight = function (user) {
+	var _p1 = user.planet;
+	switch (_p1) {
+		case 'Mercurio':
+			return user.weight * 0.286;
+		case 'Venus':
+			return user.weight * 0.908;
+		case 'Marte':
+			return user.weight * 0.378;
+		case 'Jupiter':
+			return user.weight * 2.337;
+		case 'Saturno':
+			return user.weight * 0.928;
+		case 'Urano':
+			return user.weight * 0.796;
+		case 'Neptuno':
+			return user.weight * 1.122;
+		default:
+			return user.weight;
+	}
+};
+var _user$project$Main$update = F2(
+	function (msg, user) {
+		var _p2 = msg;
+		switch (_p2.ctor) {
+			case 'Weight':
+				return _elm_lang$core$Native_Utils.update(
+					user,
+					{
+						weight: A2(
+							_elm_lang$core$Result$withDefault,
+							0,
+							_elm_lang$core$String$toFloat(_p2._0))
+					});
+			case 'Name':
+				return _elm_lang$core$Native_Utils.update(
+					user,
+					{name: _p2._0});
+			case 'Planet':
+				return _elm_lang$core$Native_Utils.update(
+					user,
+					{planet: _p2._0});
+			default:
+				return _elm_lang$core$Native_Utils.update(
+					user,
+					{
+						result: 'block',
+						namePlanet: _user$project$Main$calcName(user),
+						weightPlanet: _user$project$Main$calcWeight(user)
+					});
+		}
+	});
+var _user$project$Main$model = {name: '', namePlanet: '', weight: 0.0, weightPlanet: 0.0, planet: '', result: 'none'};
+var _user$project$Main$User = F6(
+	function (a, b, c, d, e, f) {
+		return {name: a, namePlanet: b, weight: c, weightPlanet: d, planet: e, result: f};
+	});
+var _user$project$Main$Calc = {ctor: 'Calc'};
+var _user$project$Main$Planet = function (a) {
+	return {ctor: 'Planet', _0: a};
+};
+var _user$project$Main$Name = function (a) {
+	return {ctor: 'Name', _0: a};
+};
+var _user$project$Main$Weight = function (a) {
+	return {ctor: 'Weight', _0: a};
+};
+var _user$project$Main$view = function (user) {
+	return A2(
+		_elm_lang$html$Html$div,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: A2(
+				_elm_lang$html$Html$div,
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html_Attributes$style(
+						{
+							ctor: '::',
+							_0: {ctor: '_Tuple2', _0: 'text-align', _1: 'center'},
+							_1: {ctor: '[]'}
+						}),
+					_1: {
+						ctor: '::',
+						_0: _elm_lang$html$Html_Attributes$class('jumbotron'),
+						_1: {ctor: '[]'}
+					}
+				},
+				{
+					ctor: '::',
+					_0: _user$project$Main$stylesheet,
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$h1,
+							{ctor: '[]'},
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html$text('Calcula tus datos en otro planeta'),
+								_1: {ctor: '[]'}
+							}),
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$h2,
+								{ctor: '[]'},
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html$text('\n                    Introduce tu nombre y tu peso en la tierra y podrás conocer como\n                    serían en otro planeta del sistema solar\n                    '),
+									_1: {ctor: '[]'}
+								}),
+							_1: {
+								ctor: '::',
+								_0: A2(
+									_elm_lang$html$Html$div,
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html_Attributes$style(
+											{
+												ctor: '::',
+												_0: {ctor: '_Tuple2', _0: 'padding', _1: '10px'},
+												_1: {ctor: '[]'}
+											}),
+										_1: {ctor: '[]'}
+									},
+									{
+										ctor: '::',
+										_0: A2(
+											_elm_lang$html$Html$input,
+											{
+												ctor: '::',
+												_0: _elm_lang$html$Html_Attributes$placeholder('Introduce tu nombre'),
+												_1: {
+													ctor: '::',
+													_0: _elm_lang$html$Html_Events$onInput(_user$project$Main$Name),
+													_1: {
+														ctor: '::',
+														_0: _user$project$Main$fieldStyle,
+														_1: {ctor: '[]'}
+													}
+												}
+											},
+											{ctor: '[]'}),
+										_1: {
+											ctor: '::',
+											_0: A2(
+												_elm_lang$html$Html$input,
+												{
+													ctor: '::',
+													_0: _elm_lang$html$Html_Attributes$placeholder('Introduce tu peso'),
+													_1: {
+														ctor: '::',
+														_0: _elm_lang$html$Html_Events$onInput(_user$project$Main$Weight),
+														_1: {
+															ctor: '::',
+															_0: _user$project$Main$fieldStyle,
+															_1: {ctor: '[]'}
+														}
+													}
+												},
+												{ctor: '[]'}),
+											_1: {ctor: '[]'}
+										}
+									}),
+								_1: {
+									ctor: '::',
+									_0: A2(
+										_elm_lang$html$Html$h3,
+										{ctor: '[]'},
+										{
+											ctor: '::',
+											_0: _elm_lang$html$Html$text('Elige un planeta'),
+											_1: {ctor: '[]'}
+										}),
+									_1: {
+										ctor: '::',
+										_0: A2(
+											_elm_lang$html$Html$div,
+											{
+												ctor: '::',
+												_0: _elm_lang$html$Html_Attributes$style(
+													{
+														ctor: '::',
+														_0: {ctor: '_Tuple2', _0: 'padding', _1: '10px'},
+														_1: {
+															ctor: '::',
+															_0: {ctor: '_Tuple2', _0: 'font-size', _1: '20px'},
+															_1: {ctor: '[]'}
+														}
+													}),
+												_1: {ctor: '[]'}
+											},
+											{
+												ctor: '::',
+												_0: A2(
+													_user$project$Main$btnRad,
+													'Mercurio',
+													_user$project$Main$Planet('Mercurio')),
+												_1: {
+													ctor: '::',
+													_0: A2(
+														_user$project$Main$btnRad,
+														'Venus',
+														_user$project$Main$Planet('Venus')),
+													_1: {
+														ctor: '::',
+														_0: A2(
+															_user$project$Main$btnRad,
+															'Marte',
+															_user$project$Main$Planet('Marte')),
+														_1: {
+															ctor: '::',
+															_0: A2(
+																_user$project$Main$btnRad,
+																'Jupiter',
+																_user$project$Main$Planet('Jupiter')),
+															_1: {
+																ctor: '::',
+																_0: A2(
+																	_user$project$Main$btnRad,
+																	'Saturno',
+																	_user$project$Main$Planet('Saturno')),
+																_1: {
+																	ctor: '::',
+																	_0: A2(
+																		_user$project$Main$btnRad,
+																		'Urano',
+																		_user$project$Main$Planet('Urano')),
+																	_1: {
+																		ctor: '::',
+																		_0: A2(
+																			_user$project$Main$btnRad,
+																			'Neptuno',
+																			_user$project$Main$Planet('Neptuno')),
+																		_1: {ctor: '[]'}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}),
+										_1: {
+											ctor: '::',
+											_0: A2(
+												_elm_lang$html$Html$div,
+												{
+													ctor: '::',
+													_0: _elm_lang$html$Html_Attributes$style(
+														{
+															ctor: '::',
+															_0: {ctor: '_Tuple2', _0: 'padding', _1: '10px'},
+															_1: {
+																ctor: '::',
+																_0: {ctor: '_Tuple2', _0: 'font-size', _1: '20px'},
+																_1: {ctor: '[]'}
+															}
+														}),
+													_1: {ctor: '[]'}
+												},
+												{
+													ctor: '::',
+													_0: A2(
+														_elm_lang$html$Html$button,
+														{
+															ctor: '::',
+															_0: _elm_lang$html$Html_Events$onClick(_user$project$Main$Calc),
+															_1: {
+																ctor: '::',
+																_0: _user$project$Main$btnStyle,
+																_1: {ctor: '[]'}
+															}
+														},
+														{
+															ctor: '::',
+															_0: _elm_lang$html$Html$text('Calcular'),
+															_1: {ctor: '[]'}
+														}),
+													_1: {ctor: '[]'}
+												}),
+											_1: {ctor: '[]'}
+										}
+									}
+								}
+							}
+						}
+					}
+				}),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$h3,
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html_Attributes$style(
+							{
+								ctor: '::',
+								_0: {ctor: '_Tuple2', _0: 'display', _1: user.result},
+								_1: {
+									ctor: '::',
+									_0: {ctor: '_Tuple2', _0: 'text-align', _1: 'center'},
+									_1: {ctor: '[]'}
+								}
+							}),
+						_1: {ctor: '[]'}
+					},
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html$text(
+							A2(
+								_elm_lang$core$Basics_ops['++'],
+								'Tu nombre en el idioma local sería ',
+								A2(
+									_elm_lang$core$Basics_ops['++'],
+									user.namePlanet,
+									A2(
+										_elm_lang$core$Basics_ops['++'],
+										' y tendrías un peso de ',
+										A2(
+											_elm_lang$core$Basics_ops['++'],
+											_elm_lang$core$Basics$toString(user.weightPlanet),
+											' N.'))))),
+						_1: {ctor: '[]'}
+					}),
+				_1: {ctor: '[]'}
+			}
+		});
+};
+var _user$project$Main$main = _elm_lang$html$Html$beginnerProgram(
+	{model: _user$project$Main$model, update: _user$project$Main$update, view: _user$project$Main$view})();
