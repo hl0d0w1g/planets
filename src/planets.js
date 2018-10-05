@@ -1,6 +1,4 @@
-<!DOCTYPE HTML>
-<html><head><meta charset="UTF-8"><title>Main</title><style>html,head,body { padding:0; margin:0; }
-body { font-family: calibri, helvetica, arial, sans-serif; }</style><script type="text/javascript">
+
 (function() {
 'use strict';
 
@@ -136,6 +134,7 @@ function A9(fun, a, b, c, d, e, f, g, h, i)
     ? fun.func(a, b, c, d, e, f, g, h, i)
     : fun(a)(b)(c)(d)(e)(f)(g)(h)(i);
 }
+
 //import Native.List //
 
 var _elm_lang$core$Native_Array = function() {
@@ -1102,7 +1101,8 @@ return {
 	fromJSArray: fromJSArray
 };
 
-}();//import Native.Utils //
+}();
+//import Native.Utils //
 
 var _elm_lang$core$Native_Basics = function() {
 
@@ -1242,7 +1242,8 @@ return {
 	isInfinite: isInfinite
 };
 
-}();//import //
+}();
+//import //
 
 var _elm_lang$core$Native_Utils = function() {
 
@@ -1729,7 +1730,8 @@ return {
 	toString: toString
 };
 
-}();var _elm_lang$core$Basics$never = function (_p0) {
+}();
+var _elm_lang$core$Basics$never = function (_p0) {
 	never:
 	while (true) {
 		var _p1 = _p0;
@@ -1854,6 +1856,7 @@ var _elm_lang$core$Basics$LT = {ctor: 'LT'};
 var _elm_lang$core$Basics$JustOneMore = function (a) {
 	return {ctor: 'JustOneMore', _0: a};
 };
+
 var _elm_lang$core$Maybe$withDefault = F2(
 	function ($default, maybe) {
 		var _p0 = maybe;
@@ -1926,6 +1929,7 @@ var _elm_lang$core$Maybe$map5 = F6(
 			return _elm_lang$core$Maybe$Nothing;
 		}
 	});
+
 //import Native.Utils //
 
 var _elm_lang$core$Native_List = function() {
@@ -2062,7 +2066,8 @@ return {
 	sortWith: F2(sortWith)
 };
 
-}();var _elm_lang$core$List$sortWith = _elm_lang$core$Native_List.sortWith;
+}();
+var _elm_lang$core$List$sortWith = _elm_lang$core$Native_List.sortWith;
 var _elm_lang$core$List$sortBy = _elm_lang$core$Native_List.sortBy;
 var _elm_lang$core$List$sort = function (xs) {
 	return A2(_elm_lang$core$List$sortBy, _elm_lang$core$Basics$identity, xs);
@@ -2614,6 +2619,7 @@ var _elm_lang$core$List$indexedMap = F2(
 				_elm_lang$core$List$length(xs) - 1),
 			xs);
 	});
+
 var _elm_lang$core$Array$append = _elm_lang$core$Native_Array.append;
 var _elm_lang$core$Array$length = _elm_lang$core$Native_Array.length;
 var _elm_lang$core$Array$isEmpty = function (array) {
@@ -2668,6 +2674,7 @@ var _elm_lang$core$Array$repeat = F2(
 			_elm_lang$core$Basics$always(e));
 	});
 var _elm_lang$core$Array$Array = {ctor: 'Array'};
+
 //import Native.Utils //
 
 var _elm_lang$core$Native_Char = function() {
@@ -2681,7 +2688,8 @@ return {
 	toLocaleLower: function(c) { return _elm_lang$core$Native_Utils.chr(c.toLocaleLowerCase()); }
 };
 
-}();var _elm_lang$core$Char$fromCode = _elm_lang$core$Native_Char.fromCode;
+}();
+var _elm_lang$core$Char$fromCode = _elm_lang$core$Native_Char.fromCode;
 var _elm_lang$core$Char$toCode = _elm_lang$core$Native_Char.toCode;
 var _elm_lang$core$Char$toLocaleLower = _elm_lang$core$Native_Char.toLocaleLower;
 var _elm_lang$core$Char$toLocaleUpper = _elm_lang$core$Native_Char.toLocaleUpper;
@@ -2723,6 +2731,7 @@ var _elm_lang$core$Char$isHexDigit = function ($char) {
 		_elm_lang$core$Native_Utils.chr('F'),
 		$char));
 };
+
 //import Native.Utils //
 
 var _elm_lang$core$Native_Scheduler = function() {
@@ -3003,7 +3012,8 @@ return {
 	rawSend: rawSend
 };
 
-}();//import //
+}();
+//import //
 
 var _elm_lang$core$Native_Platform = function() {
 
@@ -3562,6 +3572,7 @@ return {
 };
 
 }();
+
 var _elm_lang$core$Platform_Cmd$batch = _elm_lang$core$Native_Platform.batch;
 var _elm_lang$core$Platform_Cmd$none = _elm_lang$core$Platform_Cmd$batch(
 	{ctor: '[]'});
@@ -3576,11 +3587,13 @@ _elm_lang$core$Platform_Cmd_ops['!'] = F2(
 	});
 var _elm_lang$core$Platform_Cmd$map = _elm_lang$core$Native_Platform.map;
 var _elm_lang$core$Platform_Cmd$Cmd = {ctor: 'Cmd'};
+
 var _elm_lang$core$Platform_Sub$batch = _elm_lang$core$Native_Platform.batch;
 var _elm_lang$core$Platform_Sub$none = _elm_lang$core$Platform_Sub$batch(
 	{ctor: '[]'});
 var _elm_lang$core$Platform_Sub$map = _elm_lang$core$Native_Platform.map;
 var _elm_lang$core$Platform_Sub$Sub = {ctor: 'Sub'};
+
 var _elm_lang$core$Platform$hack = _elm_lang$core$Native_Scheduler.succeed;
 var _elm_lang$core$Platform$sendToSelf = _elm_lang$core$Native_Platform.sendToSelf;
 var _elm_lang$core$Platform$sendToApp = _elm_lang$core$Native_Platform.sendToApp;
@@ -3590,6 +3603,7 @@ var _elm_lang$core$Platform$Program = {ctor: 'Program'};
 var _elm_lang$core$Platform$Task = {ctor: 'Task'};
 var _elm_lang$core$Platform$ProcessId = {ctor: 'ProcessId'};
 var _elm_lang$core$Platform$Router = {ctor: 'Router'};
+
 var _elm_lang$core$Result$toMaybe = function (result) {
 	var _p0 = result;
 	if (_p0.ctor === 'Ok') {
@@ -3731,6 +3745,7 @@ var _elm_lang$core$Result$fromMaybe = F2(
 			return _elm_lang$core$Result$Err(err);
 		}
 	});
+
 //import Native.Utils //
 
 var _elm_lang$core$Native_Debug = function() {
@@ -3760,7 +3775,8 @@ return {
 	log: F2(log)
 };
 
-}();//import Maybe, Native.List, Native.Utils, Result //
+}();
+//import Maybe, Native.List, Native.Utils, Result //
 
 var _elm_lang$core$Native_String = function() {
 
@@ -4099,6 +4115,7 @@ return {
 };
 
 }();
+
 var _elm_lang$core$String$fromList = _elm_lang$core$Native_String.fromList;
 var _elm_lang$core$String$toList = _elm_lang$core$Native_String.toList;
 var _elm_lang$core$String$toFloat = _elm_lang$core$Native_String.toFloat;
@@ -4142,6 +4159,7 @@ var _elm_lang$core$String$fromChar = function ($char) {
 	return A2(_elm_lang$core$String$cons, $char, '');
 };
 var _elm_lang$core$String$isEmpty = _elm_lang$core$Native_String.isEmpty;
+
 var _elm_lang$core$Dict$foldr = F3(
 	function (f, acc, t) {
 		foldr:
@@ -5058,8 +5076,10 @@ var _elm_lang$core$Dict$diff = F2(
 			t1,
 			t2);
 	});
+
 var _elm_lang$core$Debug$crash = _elm_lang$core$Native_Debug.crash;
 var _elm_lang$core$Debug$log = _elm_lang$core$Native_Debug.log;
+
 //import Maybe, Native.Array, Native.List, Native.Utils, Result //
 
 var _elm_lang$core$Native_Json = function() {
@@ -5635,6 +5655,7 @@ return {
 };
 
 }();
+
 var _elm_lang$core$Json_Encode$list = _elm_lang$core$Native_Json.encodeList;
 var _elm_lang$core$Json_Encode$array = _elm_lang$core$Native_Json.encodeArray;
 var _elm_lang$core$Json_Encode$object = _elm_lang$core$Native_Json.encodeObject;
@@ -5645,6 +5666,7 @@ var _elm_lang$core$Json_Encode$int = _elm_lang$core$Native_Json.identity;
 var _elm_lang$core$Json_Encode$string = _elm_lang$core$Native_Json.identity;
 var _elm_lang$core$Json_Encode$encode = _elm_lang$core$Native_Json.encode;
 var _elm_lang$core$Json_Encode$Value = {ctor: 'Value'};
+
 var _elm_lang$core$Json_Decode$null = _elm_lang$core$Native_Json.decodeNull;
 var _elm_lang$core$Json_Decode$value = _elm_lang$core$Native_Json.decodePrimitive('value');
 var _elm_lang$core$Json_Decode$andThen = _elm_lang$core$Native_Json.andThen;
@@ -5707,6 +5729,7 @@ var _elm_lang$core$Json_Decode$int = _elm_lang$core$Native_Json.decodePrimitive(
 var _elm_lang$core$Json_Decode$bool = _elm_lang$core$Native_Json.decodePrimitive('bool');
 var _elm_lang$core$Json_Decode$string = _elm_lang$core$Native_Json.decodePrimitive('string');
 var _elm_lang$core$Json_Decode$Decoder = {ctor: 'Decoder'};
+
 var _elm_lang$core$Tuple$mapSecond = F2(
 	function (func, _p0) {
 		var _p1 = _p0;
@@ -5733,6 +5756,7 @@ var _elm_lang$core$Tuple$first = function (_p6) {
 	var _p7 = _p6;
 	return _p7._0;
 };
+
 var _elm_lang$virtual_dom$VirtualDom_Debug$wrap;
 var _elm_lang$virtual_dom$VirtualDom_Debug$wrapWithFlags;
 
@@ -7614,6 +7638,7 @@ return {
 };
 
 }();
+
 var _elm_lang$virtual_dom$VirtualDom$programWithFlags = function (impl) {
 	return A2(_elm_lang$virtual_dom$Native_VirtualDom.programWithFlags, _elm_lang$virtual_dom$VirtualDom_Debug$wrapWithFlags, impl);
 };
@@ -7644,6 +7669,7 @@ var _elm_lang$virtual_dom$VirtualDom$Options = F2(
 	});
 var _elm_lang$virtual_dom$VirtualDom$Node = {ctor: 'Node'};
 var _elm_lang$virtual_dom$VirtualDom$Property = {ctor: 'Property'};
+
 var _elm_lang$html$Html$programWithFlags = _elm_lang$virtual_dom$VirtualDom$programWithFlags;
 var _elm_lang$html$Html$program = _elm_lang$virtual_dom$VirtualDom$program;
 var _elm_lang$html$Html$beginnerProgram = function (_p0) {
@@ -7768,6 +7794,7 @@ var _elm_lang$html$Html$details = _elm_lang$html$Html$node('details');
 var _elm_lang$html$Html$summary = _elm_lang$html$Html$node('summary');
 var _elm_lang$html$Html$menuitem = _elm_lang$html$Html$node('menuitem');
 var _elm_lang$html$Html$menu = _elm_lang$html$Html$node('menu');
+
 var _elm_lang$html$Html_Attributes$map = _elm_lang$virtual_dom$VirtualDom$mapProperty;
 var _elm_lang$html$Html_Attributes$attribute = _elm_lang$virtual_dom$VirtualDom$attribute;
 var _elm_lang$html$Html_Attributes$contextmenu = function (value) {
@@ -8117,6 +8144,7 @@ var _elm_lang$html$Html_Attributes$classList = function (list) {
 				A2(_elm_lang$core$List$filter, _elm_lang$core$Tuple$second, list))));
 };
 var _elm_lang$html$Html_Attributes$style = _elm_lang$virtual_dom$VirtualDom$style;
+
 var _elm_lang$html$Html_Events$keyCode = A2(_elm_lang$core$Json_Decode$field, 'keyCode', _elm_lang$core$Json_Decode$int);
 var _elm_lang$html$Html_Events$targetChecked = A2(
 	_elm_lang$core$Json_Decode$at,
@@ -8231,230 +8259,210 @@ var _elm_lang$html$Html_Events$Options = F2(
 	function (a, b) {
 		return {stopPropagation: a, preventDefault: b};
 	});
-var _user$project$Main$fieldStyle = _elm_lang$html$Html_Attributes$style(
-	{
-		ctor: '::',
-		_0: {ctor: '_Tuple2', _0: 'width', _1: '30%'},
-		_1: {
+
+var _lcambero$planets$Planets_Types$Model = F6(
+	function (a, b, c, d, e, f) {
+		return {nameOnEarth: a, weightOnEarth: b, nameOnThePlanet: c, weightOnThePlanet: d, planet: e, displayResult: f};
+	});
+var _lcambero$planets$Planets_Types$Calculate = {ctor: 'Calculate'};
+var _lcambero$planets$Planets_Types$SelectedPlanet = function (a) {
+	return {ctor: 'SelectedPlanet', _0: a};
+};
+var _lcambero$planets$Planets_Types$NameField = function (a) {
+	return {ctor: 'NameField', _0: a};
+};
+var _lcambero$planets$Planets_Types$WeightField = function (a) {
+	return {ctor: 'WeightField', _0: a};
+};
+var _lcambero$planets$Planets_Types$Neptune = {ctor: 'Neptune'};
+var _lcambero$planets$Planets_Types$Uranus = {ctor: 'Uranus'};
+var _lcambero$planets$Planets_Types$Saturn = {ctor: 'Saturn'};
+var _lcambero$planets$Planets_Types$Jupiter = {ctor: 'Jupiter'};
+var _lcambero$planets$Planets_Types$Mars = {ctor: 'Mars'};
+var _lcambero$planets$Planets_Types$Earth = {ctor: 'Earth'};
+var _lcambero$planets$Planets_Types$Venus = {ctor: 'Venus'};
+var _lcambero$planets$Planets_Types$Mercury = {ctor: 'Mercury'};
+
+var _lcambero$planets$Planets_Utils$planetToString = function (planet) {
+	var _p0 = planet;
+	switch (_p0.ctor) {
+		case 'Mercury':
+			return 'Mercury';
+		case 'Venus':
+			return 'Venus';
+		case 'Earth':
+			return 'Earth';
+		case 'Mars':
+			return 'Mars';
+		case 'Jupiter':
+			return 'Jupiter';
+		case 'Saturn':
+			return 'Saturn';
+		case 'Uranus':
+			return 'Uranus';
+		default:
+			return 'Neptune';
+	}
+};
+var _lcambero$planets$Planets_Utils$calcWeight = function (model) {
+	var _p1 = model.planet;
+	switch (_p1.ctor) {
+		case 'Mercury':
+			return model.weightOnEarth * 0.286;
+		case 'Venus':
+			return model.weightOnEarth * 0.908;
+		case 'Earth':
+			return model.weightOnEarth;
+		case 'Mars':
+			return model.weightOnEarth * 0.378;
+		case 'Jupiter':
+			return model.weightOnEarth * 2.337;
+		case 'Saturn':
+			return model.weightOnEarth * 0.928;
+		case 'Uranus':
+			return model.weightOnEarth * 0.796;
+		default:
+			return model.weightOnEarth * 1.122;
+	}
+};
+var _lcambero$planets$Planets_Utils$calcName = function (model) {
+	var _p2 = model.planet;
+	switch (_p2.ctor) {
+		case 'Mercury':
+			return A2(_elm_lang$core$String$dropRight, 2, model.nameOnEarth);
+		case 'Venus':
+			return _elm_lang$core$String$reverse(model.nameOnEarth);
+		case 'Earth':
+			return model.nameOnEarth;
+		case 'Mars':
+			return A2(_elm_lang$core$String$right, 2, model.nameOnEarth);
+		case 'Jupiter':
+			return _elm_lang$core$String$toUpper(model.nameOnEarth);
+		case 'Saturn':
+			return A2(_elm_lang$core$String$left, 2, model.nameOnEarth);
+		case 'Uranus':
+			return A2(_elm_lang$core$String$append, model.nameOnEarth, 'ito');
+		default:
+			return A2(_elm_lang$core$String$dropLeft, 2, model.nameOnEarth);
+	}
+};
+
+var _lcambero$planets$Planets_View$btnRad = function (planet) {
+	return A2(
+		_elm_lang$html$Html$div,
+		{
 			ctor: '::',
-			_0: {ctor: '_Tuple2', _0: 'height', _1: '40px'},
-			_1: {
-				ctor: '::',
-				_0: {ctor: '_Tuple2', _0: 'margin', _1: '10px'},
-				_1: {
+			_0: _elm_lang$html$Html_Attributes$class('custom-control custom-radio custom-control-inline'),
+			_1: {ctor: '[]'}
+		},
+		{
+			ctor: '::',
+			_0: A2(
+				_elm_lang$html$Html$input,
+				{
 					ctor: '::',
-					_0: {ctor: '_Tuple2', _0: 'font-size', _1: '30px'},
+					_0: _elm_lang$html$Html_Attributes$type_('radio'),
 					_1: {
 						ctor: '::',
-						_0: {ctor: '_Tuple2', _0: 'text-align', _1: 'center'},
-						_1: {ctor: '[]'}
+						_0: _elm_lang$html$Html_Attributes$class('custom-control-input'),
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$id(
+								_lcambero$planets$Planets_Utils$planetToString(planet)),
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$name('radioButtons'),
+								_1: {
+									ctor: '::',
+									_0: _elm_lang$html$Html_Events$onClick(
+										_lcambero$planets$Planets_Types$SelectedPlanet(planet)),
+									_1: {ctor: '[]'}
+								}
+							}
+						}
 					}
-				}
-			}
-		}
-	});
-var _user$project$Main$btnStyle = _elm_lang$html$Html_Attributes$style(
-	{
-		ctor: '::',
-		_0: {ctor: '_Tuple2', _0: 'margin', _1: '5px'},
-		_1: {
-			ctor: '::',
-			_0: {ctor: '_Tuple2', _0: 'padding', _1: '10px'},
+				},
+				{ctor: '[]'}),
 			_1: {
 				ctor: '::',
-				_0: {ctor: '_Tuple2', _0: 'text-align', _1: 'center'},
-				_1: {ctor: '[]'}
-			}
-		}
-	});
-var _user$project$Main$stylesheet = function () {
-	var children = {ctor: '[]'};
-	var attrs = {
-		ctor: '::',
-		_0: A2(_elm_lang$html$Html_Attributes$attribute, 'Rel', 'stylesheet'),
-		_1: {
-			ctor: '::',
-			_0: A2(_elm_lang$html$Html_Attributes$attribute, 'property', 'stylesheet'),
-			_1: {
-				ctor: '::',
-				_0: A2(_elm_lang$html$Html_Attributes$attribute, 'href', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'),
-				_1: {ctor: '[]'}
-			}
-		}
-	};
-	var tag = 'link';
-	return A3(_elm_lang$html$Html$node, tag, attrs, children);
-}();
-var _user$project$Main$btnRad = F2(
-	function (value, msg) {
-		return A2(
-			_elm_lang$html$Html$label,
-			{
-				ctor: '::',
-				_0: _elm_lang$html$Html_Attributes$style(
+				_0: A2(
+					_elm_lang$html$Html$label,
 					{
 						ctor: '::',
-						_0: {ctor: '_Tuple2', _0: 'padding', _1: '20px'},
+						_0: _elm_lang$html$Html_Attributes$class('custom-control-label'),
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$for(
+								_lcambero$planets$Planets_Utils$planetToString(planet)),
+							_1: {ctor: '[]'}
+						}
+					},
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html$text(
+							_lcambero$planets$Planets_Utils$planetToString(planet)),
 						_1: {ctor: '[]'}
 					}),
 				_1: {ctor: '[]'}
-			},
-			{
-				ctor: '::',
-				_0: A2(
-					_elm_lang$html$Html$input,
-					{
-						ctor: '::',
-						_0: _elm_lang$html$Html_Attributes$type_('radio'),
-						_1: {
-							ctor: '::',
-							_0: _elm_lang$html$Html_Attributes$name('font-size'),
-							_1: {
-								ctor: '::',
-								_0: _elm_lang$html$Html_Events$onClick(msg),
-								_1: {ctor: '[]'}
-							}
-						}
-					},
-					{ctor: '[]'}),
-				_1: {
-					ctor: '::',
-					_0: _elm_lang$html$Html$text(value),
-					_1: {ctor: '[]'}
-				}
-			});
-	});
-var _user$project$Main$calcName = function (user) {
-	var _p0 = user.planet;
-	switch (_p0) {
-		case 'Mercurio':
-			return A2(_elm_lang$core$String$dropRight, 2, user.name);
-		case 'Venus':
-			return _elm_lang$core$String$reverse(user.name);
-		case 'Marte':
-			return A2(_elm_lang$core$String$right, 2, user.name);
-		case 'Jupiter':
-			return _elm_lang$core$String$toUpper(user.name);
-		case 'Saturno':
-			return A2(_elm_lang$core$String$left, 2, user.name);
-		case 'Urano':
-			return A2(_elm_lang$core$String$append, user.name, 'ito');
-		case 'Neptuno':
-			return A2(_elm_lang$core$String$dropLeft, 2, user.name);
-		default:
-			return user.name;
-	}
+			}
+		});
 };
-var _user$project$Main$calcWeight = function (user) {
-	var _p1 = user.planet;
-	switch (_p1) {
-		case 'Mercurio':
-			return user.weight * 0.286;
-		case 'Venus':
-			return user.weight * 0.908;
-		case 'Marte':
-			return user.weight * 0.378;
-		case 'Jupiter':
-			return user.weight * 2.337;
-		case 'Saturno':
-			return user.weight * 0.928;
-		case 'Urano':
-			return user.weight * 0.796;
-		case 'Neptuno':
-			return user.weight * 1.122;
-		default:
-			return user.weight;
-	}
-};
-var _user$project$Main$update = F2(
-	function (msg, user) {
-		var _p2 = msg;
-		switch (_p2.ctor) {
-			case 'Weight':
-				return _elm_lang$core$Native_Utils.update(
-					user,
-					{
-						weight: A2(
-							_elm_lang$core$Result$withDefault,
-							0,
-							_elm_lang$core$String$toFloat(_p2._0))
-					});
-			case 'Name':
-				return _elm_lang$core$Native_Utils.update(
-					user,
-					{name: _p2._0});
-			case 'Planet':
-				return _elm_lang$core$Native_Utils.update(
-					user,
-					{planet: _p2._0});
-			default:
-				return _elm_lang$core$Native_Utils.update(
-					user,
-					{
-						result: 'block',
-						namePlanet: _user$project$Main$calcName(user),
-						weightPlanet: _user$project$Main$calcWeight(user)
-					});
-		}
-	});
-var _user$project$Main$model = {name: '', namePlanet: '', weight: 0.0, weightPlanet: 0.0, planet: '', result: 'none'};
-var _user$project$Main$User = F6(
-	function (a, b, c, d, e, f) {
-		return {name: a, namePlanet: b, weight: c, weightPlanet: d, planet: e, result: f};
-	});
-var _user$project$Main$Calc = {ctor: 'Calc'};
-var _user$project$Main$Planet = function (a) {
-	return {ctor: 'Planet', _0: a};
-};
-var _user$project$Main$Name = function (a) {
-	return {ctor: 'Name', _0: a};
-};
-var _user$project$Main$Weight = function (a) {
-	return {ctor: 'Weight', _0: a};
-};
-var _user$project$Main$view = function (user) {
+var _lcambero$planets$Planets_View$view = function (model) {
 	return A2(
 		_elm_lang$html$Html$div,
-		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: _elm_lang$html$Html_Attributes$class('container'),
+			_1: {ctor: '[]'}
+		},
 		{
 			ctor: '::',
 			_0: A2(
 				_elm_lang$html$Html$div,
 				{
 					ctor: '::',
-					_0: _elm_lang$html$Html_Attributes$style(
-						{
-							ctor: '::',
-							_0: {ctor: '_Tuple2', _0: 'text-align', _1: 'center'},
-							_1: {ctor: '[]'}
-						}),
-					_1: {
-						ctor: '::',
-						_0: _elm_lang$html$Html_Attributes$class('jumbotron'),
-						_1: {ctor: '[]'}
-					}
+					_0: _elm_lang$html$Html_Attributes$class('row'),
+					_1: {ctor: '[]'}
 				},
 				{
 					ctor: '::',
-					_0: _user$project$Main$stylesheet,
-					_1: {
-						ctor: '::',
-						_0: A2(
-							_elm_lang$html$Html$h1,
-							{ctor: '[]'},
-							{
-								ctor: '::',
-								_0: _elm_lang$html$Html$text('Calcula tus datos en otro planeta'),
-								_1: {ctor: '[]'}
-							}),
-						_1: {
+					_0: A2(
+						_elm_lang$html$Html$div,
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$class('col'),
+							_1: {ctor: '[]'}
+						},
+						{
 							ctor: '::',
 							_0: A2(
-								_elm_lang$html$Html$h2,
-								{ctor: '[]'},
+								_elm_lang$html$Html$div,
 								{
 									ctor: '::',
-									_0: _elm_lang$html$Html$text('\n                    Introduce tu nombre y tu peso en la tierra y podrás conocer como\n                    serían en otro planeta del sistema solar\n                    '),
+									_0: _elm_lang$html$Html_Attributes$class('row justify-content-center'),
+									_1: {ctor: '[]'}
+								},
+								{
+									ctor: '::',
+									_0: A2(
+										_elm_lang$html$Html$div,
+										{
+											ctor: '::',
+											_0: _elm_lang$html$Html_Attributes$class('col-auto'),
+											_1: {ctor: '[]'}
+										},
+										{
+											ctor: '::',
+											_0: A2(
+												_elm_lang$html$Html$h1,
+												{ctor: '[]'},
+												{
+													ctor: '::',
+													_0: _elm_lang$html$Html$text('Calculate your data on another planet'),
+													_1: {ctor: '[]'}
+												}),
+											_1: {ctor: '[]'}
+										}),
 									_1: {ctor: '[]'}
 								}),
 							_1: {
@@ -8463,62 +8471,109 @@ var _user$project$Main$view = function (user) {
 									_elm_lang$html$Html$div,
 									{
 										ctor: '::',
-										_0: _elm_lang$html$Html_Attributes$style(
-											{
-												ctor: '::',
-												_0: {ctor: '_Tuple2', _0: 'padding', _1: '10px'},
-												_1: {ctor: '[]'}
-											}),
+										_0: _elm_lang$html$Html_Attributes$class('row justify-content-center'),
 										_1: {ctor: '[]'}
 									},
 									{
 										ctor: '::',
 										_0: A2(
-											_elm_lang$html$Html$input,
+											_elm_lang$html$Html$div,
 											{
 												ctor: '::',
-												_0: _elm_lang$html$Html_Attributes$placeholder('Introduce tu nombre'),
-												_1: {
-													ctor: '::',
-													_0: _elm_lang$html$Html_Events$onInput(_user$project$Main$Name),
-													_1: {
-														ctor: '::',
-														_0: _user$project$Main$fieldStyle,
-														_1: {ctor: '[]'}
-													}
-												}
+												_0: _elm_lang$html$Html_Attributes$class('col-auto text-center'),
+												_1: {ctor: '[]'}
 											},
-											{ctor: '[]'}),
-										_1: {
-											ctor: '::',
-											_0: A2(
-												_elm_lang$html$Html$input,
-												{
-													ctor: '::',
-													_0: _elm_lang$html$Html_Attributes$placeholder('Introduce tu peso'),
-													_1: {
+											{
+												ctor: '::',
+												_0: A2(
+													_elm_lang$html$Html$h5,
+													{ctor: '[]'},
+													{
 														ctor: '::',
-														_0: _elm_lang$html$Html_Events$onInput(_user$project$Main$Weight),
-														_1: {
-															ctor: '::',
-															_0: _user$project$Main$fieldStyle,
-															_1: {ctor: '[]'}
-														}
-													}
-												},
-												{ctor: '[]'}),
-											_1: {ctor: '[]'}
-										}
+														_0: _elm_lang$html$Html$text('Enter your name and your weight on the Earth and you can know how they would be on another planet in the solar system'),
+														_1: {ctor: '[]'}
+													}),
+												_1: {ctor: '[]'}
+											}),
+										_1: {ctor: '[]'}
 									}),
 								_1: {
 									ctor: '::',
 									_0: A2(
-										_elm_lang$html$Html$h3,
-										{ctor: '[]'},
+										_elm_lang$html$Html$div,
 										{
 											ctor: '::',
-											_0: _elm_lang$html$Html$text('Elige un planeta'),
+											_0: _elm_lang$html$Html_Attributes$class('row justify-content-center'),
 											_1: {ctor: '[]'}
+										},
+										{
+											ctor: '::',
+											_0: A2(
+												_elm_lang$html$Html$div,
+												{
+													ctor: '::',
+													_0: _elm_lang$html$Html_Attributes$class('col-auto'),
+													_1: {ctor: '[]'}
+												},
+												{
+													ctor: '::',
+													_0: A2(
+														_elm_lang$html$Html$input,
+														{
+															ctor: '::',
+															_0: _elm_lang$html$Html_Attributes$type_('text'),
+															_1: {
+																ctor: '::',
+																_0: _elm_lang$html$Html_Attributes$placeholder('Introduce your name'),
+																_1: {
+																	ctor: '::',
+																	_0: _elm_lang$html$Html_Attributes$class('form-control'),
+																	_1: {
+																		ctor: '::',
+																		_0: _elm_lang$html$Html_Events$onInput(_lcambero$planets$Planets_Types$NameField),
+																		_1: {ctor: '[]'}
+																	}
+																}
+															}
+														},
+														{ctor: '[]'}),
+													_1: {ctor: '[]'}
+												}),
+											_1: {
+												ctor: '::',
+												_0: A2(
+													_elm_lang$html$Html$div,
+													{
+														ctor: '::',
+														_0: _elm_lang$html$Html_Attributes$class('col-auto'),
+														_1: {ctor: '[]'}
+													},
+													{
+														ctor: '::',
+														_0: A2(
+															_elm_lang$html$Html$input,
+															{
+																ctor: '::',
+																_0: _elm_lang$html$Html_Attributes$type_('number'),
+																_1: {
+																	ctor: '::',
+																	_0: _elm_lang$html$Html_Attributes$placeholder('Introduce your weight'),
+																	_1: {
+																		ctor: '::',
+																		_0: _elm_lang$html$Html_Attributes$class('form-control'),
+																		_1: {
+																			ctor: '::',
+																			_0: _elm_lang$html$Html_Events$onInput(_lcambero$planets$Planets_Types$WeightField),
+																			_1: {ctor: '[]'}
+																		}
+																	}
+																}
+															},
+															{ctor: '[]'}),
+														_1: {ctor: '[]'}
+													}),
+												_1: {ctor: '[]'}
+											}
 										}),
 									_1: {
 										ctor: '::',
@@ -8526,67 +8581,103 @@ var _user$project$Main$view = function (user) {
 											_elm_lang$html$Html$div,
 											{
 												ctor: '::',
-												_0: _elm_lang$html$Html_Attributes$style(
-													{
-														ctor: '::',
-														_0: {ctor: '_Tuple2', _0: 'padding', _1: '10px'},
-														_1: {
-															ctor: '::',
-															_0: {ctor: '_Tuple2', _0: 'font-size', _1: '20px'},
-															_1: {ctor: '[]'}
-														}
-													}),
+												_0: _elm_lang$html$Html_Attributes$class('row justify-content-center'),
 												_1: {ctor: '[]'}
 											},
 											{
 												ctor: '::',
 												_0: A2(
-													_user$project$Main$btnRad,
-													'Mercurio',
-													_user$project$Main$Planet('Mercurio')),
-												_1: {
-													ctor: '::',
-													_0: A2(
-														_user$project$Main$btnRad,
-														'Venus',
-														_user$project$Main$Planet('Venus')),
-													_1: {
+													_elm_lang$html$Html$div,
+													{
+														ctor: '::',
+														_0: _elm_lang$html$Html_Attributes$class('col-auto'),
+														_1: {ctor: '[]'}
+													},
+													{
 														ctor: '::',
 														_0: A2(
-															_user$project$Main$btnRad,
-															'Marte',
-															_user$project$Main$Planet('Marte')),
+															_elm_lang$html$Html$div,
+															{
+																ctor: '::',
+																_0: _elm_lang$html$Html_Attributes$class('row justify-content-center'),
+																_1: {ctor: '[]'}
+															},
+															{
+																ctor: '::',
+																_0: A2(
+																	_elm_lang$html$Html$div,
+																	{
+																		ctor: '::',
+																		_0: _elm_lang$html$Html_Attributes$class('col-auto'),
+																		_1: {ctor: '[]'}
+																	},
+																	{
+																		ctor: '::',
+																		_0: A2(
+																			_elm_lang$html$Html$h4,
+																			{ctor: '[]'},
+																			{
+																				ctor: '::',
+																				_0: _elm_lang$html$Html$text('Choose a planet'),
+																				_1: {ctor: '[]'}
+																			}),
+																		_1: {ctor: '[]'}
+																	}),
+																_1: {ctor: '[]'}
+															}),
 														_1: {
 															ctor: '::',
 															_0: A2(
-																_user$project$Main$btnRad,
-																'Jupiter',
-																_user$project$Main$Planet('Jupiter')),
-															_1: {
-																ctor: '::',
-																_0: A2(
-																	_user$project$Main$btnRad,
-																	'Saturno',
-																	_user$project$Main$Planet('Saturno')),
-																_1: {
+																_elm_lang$html$Html$div,
+																{
+																	ctor: '::',
+																	_0: _elm_lang$html$Html_Attributes$class('row justify-content-center'),
+																	_1: {ctor: '[]'}
+																},
+																{
 																	ctor: '::',
 																	_0: A2(
-																		_user$project$Main$btnRad,
-																		'Urano',
-																		_user$project$Main$Planet('Urano')),
-																	_1: {
-																		ctor: '::',
-																		_0: A2(
-																			_user$project$Main$btnRad,
-																			'Neptuno',
-																			_user$project$Main$Planet('Neptuno')),
-																		_1: {ctor: '[]'}
-																	}
-																}
-															}
+																		_elm_lang$html$Html$div,
+																		{
+																			ctor: '::',
+																			_0: _elm_lang$html$Html_Attributes$class('col-auto'),
+																			_1: {ctor: '[]'}
+																		},
+																		{
+																			ctor: '::',
+																			_0: _lcambero$planets$Planets_View$btnRad(_lcambero$planets$Planets_Types$Mercury),
+																			_1: {
+																				ctor: '::',
+																				_0: _lcambero$planets$Planets_View$btnRad(_lcambero$planets$Planets_Types$Venus),
+																				_1: {
+																					ctor: '::',
+																					_0: _lcambero$planets$Planets_View$btnRad(_lcambero$planets$Planets_Types$Mars),
+																					_1: {
+																						ctor: '::',
+																						_0: _lcambero$planets$Planets_View$btnRad(_lcambero$planets$Planets_Types$Jupiter),
+																						_1: {
+																							ctor: '::',
+																							_0: _lcambero$planets$Planets_View$btnRad(_lcambero$planets$Planets_Types$Saturn),
+																							_1: {
+																								ctor: '::',
+																								_0: _lcambero$planets$Planets_View$btnRad(_lcambero$planets$Planets_Types$Uranus),
+																								_1: {
+																									ctor: '::',
+																									_0: _lcambero$planets$Planets_View$btnRad(_lcambero$planets$Planets_Types$Neptune),
+																									_1: {ctor: '[]'}
+																								}
+																							}
+																						}
+																					}
+																				}
+																			}
+																		}),
+																	_1: {ctor: '[]'}
+																}),
+															_1: {ctor: '[]'}
 														}
-													}
-												}
+													}),
+												_1: {ctor: '[]'}
 											}),
 										_1: {
 											ctor: '::',
@@ -8594,92 +8685,170 @@ var _user$project$Main$view = function (user) {
 												_elm_lang$html$Html$div,
 												{
 													ctor: '::',
-													_0: _elm_lang$html$Html_Attributes$style(
-														{
-															ctor: '::',
-															_0: {ctor: '_Tuple2', _0: 'padding', _1: '10px'},
-															_1: {
-																ctor: '::',
-																_0: {ctor: '_Tuple2', _0: 'font-size', _1: '20px'},
-																_1: {ctor: '[]'}
-															}
-														}),
+													_0: _elm_lang$html$Html_Attributes$class('row justify-content-center'),
 													_1: {ctor: '[]'}
 												},
 												{
 													ctor: '::',
 													_0: A2(
-														_elm_lang$html$Html$button,
+														_elm_lang$html$Html$div,
 														{
 															ctor: '::',
-															_0: _elm_lang$html$Html_Events$onClick(_user$project$Main$Calc),
-															_1: {
-																ctor: '::',
-																_0: _user$project$Main$btnStyle,
-																_1: {ctor: '[]'}
-															}
+															_0: _elm_lang$html$Html_Attributes$class('col-auto'),
+															_1: {ctor: '[]'}
 														},
 														{
 															ctor: '::',
-															_0: _elm_lang$html$Html$text('Calcular'),
+															_0: A2(
+																_elm_lang$html$Html$button,
+																{
+																	ctor: '::',
+																	_0: _elm_lang$html$Html_Attributes$type_('button'),
+																	_1: {
+																		ctor: '::',
+																		_0: _elm_lang$html$Html_Attributes$class('btn btn-primary'),
+																		_1: {
+																			ctor: '::',
+																			_0: _elm_lang$html$Html_Attributes$disabled(false),
+																			_1: {
+																				ctor: '::',
+																				_0: _elm_lang$html$Html_Events$onClick(_lcambero$planets$Planets_Types$Calculate),
+																				_1: {ctor: '[]'}
+																			}
+																		}
+																	}
+																},
+																{
+																	ctor: '::',
+																	_0: _elm_lang$html$Html$text('Calculate'),
+																	_1: {ctor: '[]'}
+																}),
 															_1: {ctor: '[]'}
 														}),
 													_1: {ctor: '[]'}
 												}),
-											_1: {ctor: '[]'}
+											_1: {
+												ctor: '::',
+												_0: model.displayResult ? A2(
+													_elm_lang$html$Html$div,
+													{
+														ctor: '::',
+														_0: _elm_lang$html$Html_Attributes$class('row justify-content-center'),
+														_1: {ctor: '[]'}
+													},
+													{
+														ctor: '::',
+														_0: A2(
+															_elm_lang$html$Html$div,
+															{
+																ctor: '::',
+																_0: _elm_lang$html$Html_Attributes$class('col-auto text-center'),
+																_1: {ctor: '[]'}
+															},
+															{
+																ctor: '::',
+																_0: A2(
+																	_elm_lang$html$Html$h6,
+																	{ctor: '[]'},
+																	{
+																		ctor: '::',
+																		_0: _elm_lang$html$Html$text(
+																			A2(
+																				_elm_lang$core$Basics_ops['++'],
+																				'Your name in the local language would be ',
+																				A2(
+																					_elm_lang$core$Basics_ops['++'],
+																					model.nameOnThePlanet,
+																					A2(
+																						_elm_lang$core$Basics_ops['++'],
+																						' and you will have a weight of ',
+																						A2(
+																							_elm_lang$core$Basics_ops['++'],
+																							_elm_lang$core$Basics$toString(model.weightOnThePlanet),
+																							' N.'))))),
+																		_1: {ctor: '[]'}
+																	}),
+																_1: {ctor: '[]'}
+															}),
+														_1: {ctor: '[]'}
+													}) : A2(
+													_elm_lang$html$Html$div,
+													{ctor: '[]'},
+													{ctor: '[]'}),
+												_1: {ctor: '[]'}
+											}
 										}
 									}
 								}
 							}
-						}
-					}
+						}),
+					_1: {ctor: '[]'}
 				}),
-			_1: {
-				ctor: '::',
-				_0: A2(
-					_elm_lang$html$Html$h3,
-					{
-						ctor: '::',
-						_0: _elm_lang$html$Html_Attributes$style(
-							{
-								ctor: '::',
-								_0: {ctor: '_Tuple2', _0: 'display', _1: user.result},
-								_1: {
-									ctor: '::',
-									_0: {ctor: '_Tuple2', _0: 'text-align', _1: 'center'},
-									_1: {ctor: '[]'}
-								}
-							}),
-						_1: {ctor: '[]'}
-					},
-					{
-						ctor: '::',
-						_0: _elm_lang$html$Html$text(
-							A2(
-								_elm_lang$core$Basics_ops['++'],
-								'Tu nombre en el idioma local sería ',
-								A2(
-									_elm_lang$core$Basics_ops['++'],
-									user.namePlanet,
-									A2(
-										_elm_lang$core$Basics_ops['++'],
-										' y tendrías un peso de ',
-										A2(
-											_elm_lang$core$Basics_ops['++'],
-											_elm_lang$core$Basics$toString(user.weightPlanet),
-											' N.'))))),
-						_1: {ctor: '[]'}
-					}),
-				_1: {ctor: '[]'}
-			}
+			_1: {ctor: '[]'}
 		});
 };
-var _user$project$Main$main = _elm_lang$html$Html$beginnerProgram(
-	{model: _user$project$Main$model, update: _user$project$Main$update, view: _user$project$Main$view})();
+
+var _lcambero$planets$Planets_State$subscriptions = function (_p0) {
+	return _elm_lang$core$Platform_Sub$none;
+};
+var _lcambero$planets$Planets_State$update = F2(
+	function (msg, model) {
+		var _p1 = msg;
+		switch (_p1.ctor) {
+			case 'WeightField':
+				return {
+					ctor: '_Tuple2',
+					_0: _elm_lang$core$Native_Utils.update(
+						model,
+						{
+							weightOnEarth: A2(
+								_elm_lang$core$Result$withDefault,
+								0,
+								_elm_lang$core$String$toFloat(_p1._0)),
+							displayResult: false
+						}),
+					_1: _elm_lang$core$Platform_Cmd$none
+				};
+			case 'NameField':
+				return {
+					ctor: '_Tuple2',
+					_0: _elm_lang$core$Native_Utils.update(
+						model,
+						{nameOnEarth: _p1._0, displayResult: false}),
+					_1: _elm_lang$core$Platform_Cmd$none
+				};
+			case 'SelectedPlanet':
+				return {
+					ctor: '_Tuple2',
+					_0: _elm_lang$core$Native_Utils.update(
+						model,
+						{planet: _p1._0, displayResult: false}),
+					_1: _elm_lang$core$Platform_Cmd$none
+				};
+			default:
+				return {
+					ctor: '_Tuple2',
+					_0: _elm_lang$core$Native_Utils.update(
+						model,
+						{
+							nameOnThePlanet: _lcambero$planets$Planets_Utils$calcName(model),
+							weightOnThePlanet: _lcambero$planets$Planets_Utils$calcWeight(model),
+							displayResult: true
+						}),
+					_1: _elm_lang$core$Platform_Cmd$none
+				};
+		}
+	});
+var _lcambero$planets$Planets_State$initialModel = {nameOnEarth: '', weightOnEarth: 0.0, nameOnThePlanet: '', weightOnThePlanet: 0.0, planet: _lcambero$planets$Planets_Types$Earth, displayResult: false};
+var _lcambero$planets$Planets_State$init = {ctor: '_Tuple2', _0: _lcambero$planets$Planets_State$initialModel, _1: _elm_lang$core$Platform_Cmd$none};
+
+var _lcambero$planets$Planets$main = _elm_lang$html$Html$program(
+	{init: _lcambero$planets$Planets_State$init, view: _lcambero$planets$Planets_View$view, update: _lcambero$planets$Planets_State$update, subscriptions: _lcambero$planets$Planets_State$subscriptions})();
+
 var Elm = {};
-Elm['Main'] = Elm['Main'] || {};
-if (typeof _user$project$Main$main !== 'undefined') {
-    _user$project$Main$main(Elm['Main'], 'Main', undefined);
+Elm['Planets'] = Elm['Planets'] || {};
+if (typeof _lcambero$planets$Planets$main !== 'undefined') {
+    _lcambero$planets$Planets$main(Elm['Planets'], 'Planets', undefined);
 }
 
 if (typeof define === "function" && define['amd'])
@@ -8711,4 +8880,4 @@ for (var publicModule in Elm)
 }
 
 }).call(this);
-</script></head><body><script type="text/javascript">Elm.Main.fullscreen()</script></body></html>
+
