@@ -8347,7 +8347,7 @@ var _lcambero$planets$Planets_Utils$calcName = function (model) {
 	}
 };
 
-var _lcambero$planets$Planets_View$btnRad = function (planet) {
+var _lcambero$planets$Planets_View$renderRadioButton = function (planet) {
 	return A2(
 		_elm_lang$html$Html$div,
 		{
@@ -8439,7 +8439,7 @@ var _lcambero$planets$Planets_View$view = function (model) {
 								_elm_lang$html$Html$div,
 								{
 									ctor: '::',
-									_0: _elm_lang$html$Html_Attributes$class('row justify-content-center'),
+									_0: _elm_lang$html$Html_Attributes$class('row justify-content-center title'),
 									_1: {ctor: '[]'}
 								},
 								{
@@ -8471,7 +8471,7 @@ var _lcambero$planets$Planets_View$view = function (model) {
 									_elm_lang$html$Html$div,
 									{
 										ctor: '::',
-										_0: _elm_lang$html$Html_Attributes$class('row justify-content-center'),
+										_0: _elm_lang$html$Html_Attributes$class('row justify-content-center small-padding'),
 										_1: {ctor: '[]'}
 									},
 									{
@@ -8581,7 +8581,7 @@ var _lcambero$planets$Planets_View$view = function (model) {
 											_elm_lang$html$Html$div,
 											{
 												ctor: '::',
-												_0: _elm_lang$html$Html_Attributes$class('row justify-content-center'),
+												_0: _elm_lang$html$Html_Attributes$class('row justify-content-center big-padding'),
 												_1: {ctor: '[]'}
 											},
 											{
@@ -8645,25 +8645,25 @@ var _lcambero$planets$Planets_View$view = function (model) {
 																		},
 																		{
 																			ctor: '::',
-																			_0: _lcambero$planets$Planets_View$btnRad(_lcambero$planets$Planets_Types$Mercury),
+																			_0: _lcambero$planets$Planets_View$renderRadioButton(_lcambero$planets$Planets_Types$Mercury),
 																			_1: {
 																				ctor: '::',
-																				_0: _lcambero$planets$Planets_View$btnRad(_lcambero$planets$Planets_Types$Venus),
+																				_0: _lcambero$planets$Planets_View$renderRadioButton(_lcambero$planets$Planets_Types$Venus),
 																				_1: {
 																					ctor: '::',
-																					_0: _lcambero$planets$Planets_View$btnRad(_lcambero$planets$Planets_Types$Mars),
+																					_0: _lcambero$planets$Planets_View$renderRadioButton(_lcambero$planets$Planets_Types$Mars),
 																					_1: {
 																						ctor: '::',
-																						_0: _lcambero$planets$Planets_View$btnRad(_lcambero$planets$Planets_Types$Jupiter),
+																						_0: _lcambero$planets$Planets_View$renderRadioButton(_lcambero$planets$Planets_Types$Jupiter),
 																						_1: {
 																							ctor: '::',
-																							_0: _lcambero$planets$Planets_View$btnRad(_lcambero$planets$Planets_Types$Saturn),
+																							_0: _lcambero$planets$Planets_View$renderRadioButton(_lcambero$planets$Planets_Types$Saturn),
 																							_1: {
 																								ctor: '::',
-																								_0: _lcambero$planets$Planets_View$btnRad(_lcambero$planets$Planets_Types$Uranus),
+																								_0: _lcambero$planets$Planets_View$renderRadioButton(_lcambero$planets$Planets_Types$Uranus),
 																								_1: {
 																									ctor: '::',
-																									_0: _lcambero$planets$Planets_View$btnRad(_lcambero$planets$Planets_Types$Neptune),
+																									_0: _lcambero$planets$Planets_View$renderRadioButton(_lcambero$planets$Planets_Types$Neptune),
 																									_1: {ctor: '[]'}
 																								}
 																							}
@@ -8685,7 +8685,7 @@ var _lcambero$planets$Planets_View$view = function (model) {
 												_elm_lang$html$Html$div,
 												{
 													ctor: '::',
-													_0: _elm_lang$html$Html_Attributes$class('row justify-content-center'),
+													_0: _elm_lang$html$Html_Attributes$class('row justify-content-center big-padding'),
 													_1: {ctor: '[]'}
 												},
 												{
@@ -8709,7 +8709,8 @@ var _lcambero$planets$Planets_View$view = function (model) {
 																		_0: _elm_lang$html$Html_Attributes$class('btn btn-primary'),
 																		_1: {
 																			ctor: '::',
-																			_0: _elm_lang$html$Html_Attributes$disabled(false),
+																			_0: _elm_lang$html$Html_Attributes$disabled(
+																				_elm_lang$core$String$isEmpty(model.nameOnEarth) || _elm_lang$core$Native_Utils.eq(model.weightOnEarth, 0.0)),
 																			_1: {
 																				ctor: '::',
 																				_0: _elm_lang$html$Html_Events$onClick(_lcambero$planets$Planets_Types$Calculate),
@@ -8755,17 +8756,23 @@ var _lcambero$planets$Planets_View$view = function (model) {
 																		_0: _elm_lang$html$Html$text(
 																			A2(
 																				_elm_lang$core$Basics_ops['++'],
-																				'Your name in the local language would be ',
+																				'Your name in the local ',
 																				A2(
 																					_elm_lang$core$Basics_ops['++'],
-																					model.nameOnThePlanet,
+																					_lcambero$planets$Planets_Utils$planetToString(model.planet),
 																					A2(
 																						_elm_lang$core$Basics_ops['++'],
-																						' and you will have a weight of ',
+																						' language would be ',
 																						A2(
 																							_elm_lang$core$Basics_ops['++'],
-																							_elm_lang$core$Basics$toString(model.weightOnThePlanet),
-																							' N.'))))),
+																							model.nameOnThePlanet,
+																							A2(
+																								_elm_lang$core$Basics_ops['++'],
+																								' and you will have a weight of ',
+																								A2(
+																									_elm_lang$core$Basics_ops['++'],
+																									_elm_lang$core$Basics$toString(model.weightOnThePlanet),
+																									' N.'))))))),
 																		_1: {ctor: '[]'}
 																	}),
 																_1: {ctor: '[]'}

@@ -1,1 +1,17 @@
-
+:root {
+    --color-1: #000000;
+}
+@font-face {
+	font-family: 'Roboto';
+	font-style: normal;
+	color: var(--color-1);
+}
+.title{
+	padding: 40px;
+}
+.small-padding{
+	padding: 10px;
+}
+.big-padding{
+	padding: 30px;
+}

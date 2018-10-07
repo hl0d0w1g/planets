@@ -11,9 +11,9 @@ module Planets.View exposing (view)
 
 import Planets.Types exposing (Model, Msg(..), Planet(..))
 import Planets.Utils exposing (planetToString)
-import Html exposing (..)
-import Html.Attributes exposing (..)
-import Html.Events exposing (..)
+import Html exposing (Html, div, input, button, h1, h4, h5, h6, label, text)
+import Html.Attributes exposing (class, for, type_, placeholder, disabled, id, name)
+import Html.Events exposing (onInput, onClick)
 
 
 {-| Main app view element
@@ -23,11 +23,11 @@ view model =
     div [ class "container" ]
         [ div [ class "row" ]
             [ div [ class "col" ]
-                [ div [ class "row justify-content-center" ]
+                [ div [ class "row justify-content-center title" ]
                     [ div [ class "col-auto" ]
                         [ h1 [] [ text "Calculate your data on another planet" ] ]
                     ]
-                , div [ class "row justify-content-center" ]
+                , div [ class "row justify-content-center small-padding" ]
                     [ div [ class "col-auto text-center" ]
                         [ h5 [] [ text "Enter your name and your weight on the Earth and you can know how they would be on another planet in the solar system" ]
                         ]
@@ -52,7 +52,7 @@ view model =
                             []
                         ]
                     ]
-                , div [ class "row justify-content-center" ]
+                , div [ class "row justify-content-center big-padding" ]
                     [ div [ class "col-auto" ]
                         [ div [ class "row justify-content-center" ]
                             [ div [ class "col-auto" ]
@@ -71,12 +71,12 @@ view model =
                             ]
                         ]
                     ]
-                , div [ class "row justify-content-center" ]
+                , div [ class "row justify-content-center big-padding" ]
                     [ div [ class "col-auto" ]
                         [ button
                             [ type_ "button"
                             , class "btn btn-primary"
-                            , disabled False
+                            , disabled ((String.isEmpty model.nameOnEarth) || (model.weightOnEarth == 0.0))
                             , onClick Calculate
                             ]
                             [ text "Calculate" ]
@@ -87,7 +87,9 @@ view model =
                         [ div [ class "col-auto text-center" ]
                             [ h6 []
                                 [ text
-                                    ("Your name in the local language would be "
+                                    ("Your name in the local "
+                                        ++ (planetToString model.planet)
+                                        ++ " language would be "
                                         ++ model.nameOnThePlanet
                                         ++ " and you will have a weight of "
                                         ++ toString model.weightOnThePlanet
