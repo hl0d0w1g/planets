@@ -2,7 +2,7 @@
 
 Basic project with ELM to calculate our name and our weight in another planet of the solar system.
 
-To use it, execute the command:
+To use it, execute the command (elm 0.18 is necessary):
 ```
 sh build.sh
 ```
