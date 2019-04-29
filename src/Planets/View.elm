@@ -9,11 +9,11 @@ module Planets.View exposing (view)
 
 -}
 
+import Html exposing (Html, button, div, h1, h4, h5, h6, input, label, span, text)
+import Html.Attributes exposing (class, disabled, for, id, name, placeholder, type_)
+import Html.Events exposing (onClick, onInput)
 import Planets.Types exposing (Model, Msg(..), Planet(..))
 import Planets.Utils exposing (planetToString)
-import Html exposing (Html, div, input, button, h1, h4, h5, h6, label, text)
-import Html.Attributes exposing (class, for, type_, placeholder, disabled, id, name)
-import Html.Events exposing (onInput, onClick)
 
 
 {-| Main app view element
@@ -76,28 +76,27 @@ view model =
                         [ button
                             [ type_ "button"
                             , class "btn btn-primary"
-                            , disabled ((String.isEmpty model.nameOnEarth) || (model.weightOnEarth == 0.0))
+                            , disabled (String.isEmpty model.nameOnEarth || (model.weightOnEarth == 0.0))
                             , onClick Calculate
                             ]
                             [ text "Calculate" ]
                         ]
                     ]
-                , if (model.displayResult) then
+                , if model.displayResult then
                     div [ class "row justify-content-center" ]
                         [ div [ class "col-auto text-center" ]
                             [ h6 []
-                                [ text
-                                    ("Your name in the local "
-                                        ++ (planetToString model.planet)
-                                        ++ " language would be "
-                                        ++ model.nameOnThePlanet
-                                        ++ " and you will have a weight of "
-                                        ++ toString model.weightOnThePlanet
-                                        ++ " N."
-                                    )
+                                [ span [] [ text "Your name in the local " ]
+                                , span [ class "font-weight-bold" ] [ text (planetToString model.planet) ]
+                                , span [] [ text " language would be " ]
+                                , span [ class "font-weight-bold" ] [ text model.nameOnThePlanet ]
+                                , span [] [ text " and you will have a weight of " ]
+                                , span [ class "font-weight-bold" ] [ text (String.left 5 (toString model.weightOnThePlanet)) ]
+                                , span [] [ text " N." ]
                                 ]
                             ]
                         ]
+
                   else
                     div [] []
                 ]
