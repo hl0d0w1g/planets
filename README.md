@@ -11,6 +11,8 @@ To use it, execute the command (elm 0.18 is necessary):
 sh build.sh
 ```
 
+Also you can try it online [here](https://lcambero.github.io/html/playground/planets.html)
+
 ## Author
 
 * **Luis Cambero** - [lcambero](https://github.com/lcambero)
